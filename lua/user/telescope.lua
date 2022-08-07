@@ -11,7 +11,15 @@ telescope.setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-    file_ignore_patterns = { ".git/", "node_modules" },
+    file_ignore_patterns = { ".git/", "node_modules", ".stubs/" },
+    layout_strategy = "vertical",
+    layout_config = {
+      vertical = {
+        prompt_position = "top",
+        mirror = true,
+      }
+    },
+    sorting_strategy = "ascending",
 
     mappings = {
       i = {
@@ -23,3 +31,5 @@ telescope.setup {
     },
   },
 }
+telescope.load_extension('fzf')
+vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number" -- set line numbers in the telescope window

@@ -1,0 +1,5 @@
+-- Just playing around with auto-switching the profile in iterm2. I don't think I got this working via this strategy, yet
+-- if "$ITERM_PROFILE" then
+--   vim.cmd[[ silent !printf "\e]50;SetProfile=LineSpaced\x7"]]
+--   vim.cmd[[autocmd VimLeave * silent !printf "\e]50;SetProfile=Default\x7"]]
+-- end
