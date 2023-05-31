@@ -49,6 +49,9 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 keymap("n", "Q", "<nop>") -- disables Q
 
+-- vim-maximizer <- Haven't tried using this yet
+keymap("n", "<leader>mt", ":MaximizerToggle<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -62,9 +65,6 @@ keymap("v", "K", ":m '>-2<CR>gv=gv")
 keymap("i", "<C-c>", "<ESC>")
 
 -- Plugins keymaps --
-
--- vim-maximizer
-keymap("n", "<leader>mt", ":MaximizerToggle<CR>", opts)
 
 -- Comment
 -- These are now setup in comment.lua under plugins because it was easier to use their setup instead of commands
