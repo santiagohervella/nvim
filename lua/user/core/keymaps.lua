@@ -52,6 +52,10 @@ keymap("n", "Q", "<nop>") -- disables Q
 -- vim-maximizer <- Haven't tried using this yet
 keymap("n", "<leader>mt", ":MaximizerToggle<CR>", opts)
 
+-- Prevent accidentally hitting q all the time in normal mode and starting a recording...
+keymap("n", "<leader>q", "q", opts)
+keymap("n", "q", "<Nop>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
