@@ -1,23 +1,41 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-	print("Cannot find nvim-tree!")
-	return
-end
-
--- TODO: Many symbol settings in old lunarvim setup to look at
-nvim_tree.setup({
-	update_focused_file = {
-		enable = true,
-		update_root = true,
+return {
+	"nvim-tree/nvim-tree.lua",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
 	},
-	renderer = {
-		icons = {
-			glyphs = {
-				folder = {
-					arrow_closed = "", -- arrow when folder is closed
-					arrow_open = "", -- arrow when folder is open
+	config = function()
+		local nvim_tree = require("nvim-tree")
+
+		-- TODO: Many symbol settings in old lunarvim setup to look at
+		nvim_tree.setup({
+			update_focused_file = {
+				enable = true,
+				update_root = true,
+			},
+			renderer = {
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = "", -- arrow when folder is closed
+							arrow_open = "", -- arrow when folder is open
+						},
+					},
 				},
 			},
-		},
-	},
-})
+			view = {
+				width = 50,
+			},
+			filters = {
+				dotfiles = false,
+				git_ignored = false,
+			},
+		})
+
+		-- Shorten function name
+		local keymap = vim.keymap.set
+		-- Silent keymap option
+		local opts = { silent = true }
+
+		keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+	end,
+}

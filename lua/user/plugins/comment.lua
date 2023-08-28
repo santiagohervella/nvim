@@ -1,24 +1,23 @@
-local status_ok, comment = pcall(require, "Comment")
-if not status_ok then
-	print("Comment plugin not found!")
-	return
-end
-
-local commentstring_status_ok, commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
-if not commentstring_status_ok then
-	print("Cannot find ts_context_commentstring.integrations.comment_nvim plugin!")
-	return
-end
-
-comment.setup({
-	-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#commentnvim
-	prehook = commentstring.create_pre_hook(),
-	toggler = {
-		line = "<leader>/",
+return {
+	"numToStr/Comment.nvim",
+	dependencies = {
+		"JoosepAlviste/nvim-ts-context-commentstring",
 	},
-	opleader = {
-		line = "<leader>/",
-	},
-})
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		local comment = require("Comment")
+		local ts_context_commentstring = require("ts_context_commentstring.integrations.comment_nvim")
 
--- TODO: Review the old lunarvim config for this in case there's good stuff in there
+		comment.setup({
+			-- for commenting tsx and jsx files
+			-- https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#commentnvim
+			pre_hook = ts_context_commentstring.create_pre_hook(),
+			toggler = {
+				line = "<leader>/",
+			},
+			opleader = {
+				line = "<leader>/",
+			},
+		})
+	end,
+}

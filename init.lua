@@ -11,19 +11,5 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("user.plugins-setup")
-require("user.core.options")
-require("user.core.keymaps")
-require("user.plugins.comment")
-require("user.plugins.nvim-tree")
-require("user.plugins.lualine")
-require("user.plugins.telescope")
-require("user.plugins.nvim-cmp")
-require("user.plugins.lsp.mason")
-require("user.plugins.lsp.lspsaga")
-require("user.plugins.lsp.lspconfig")
-require("user.plugins.lsp.null-ls")
-require("user.plugins.autopairs")
-require("user.plugins.treesitter")
-require("user.plugins.gitsigns")
-require("user.plugins.bufferline")
+require("user.core")
+require("user.lazy")

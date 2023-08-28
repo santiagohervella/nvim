@@ -1,7 +1,5 @@
-local gitsigns_status_ok, gitsigns = pcall(require, "gitsigns")
-if not gitsigns_status_ok then
-	return
-end
-
--- configure/enable gitsigns
-gitsigns.setup()
+return {
+	"lewis6991/gitsigns.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	config = true,
+}
