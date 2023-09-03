@@ -23,11 +23,9 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				-- TODO: Should these be n and p?
-				["<C-k>"] = cmp.mapping.select_prev_item(),
-				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-b>"] = cmp.mapping.scroll_docs(-4), -- old lunarvim config had this as -1
-				["<C-f>"] = cmp.mapping.scroll_docs(4), -- old lunarvim config had this as 1
+				-- I can't seem to get these two scroll commands to do anything. I wonder if they're conflicting with somethingr
+				["<Up>"] = cmp.mapping.scroll_docs(-4), -- old lunarvim config had this as -1
+				["<Down>"] = cmp.mapping.scroll_docs(4), -- old lunarvim config had this as 1
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.

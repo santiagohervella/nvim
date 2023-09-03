@@ -16,6 +16,16 @@ return {
 			-- vim.cmd([[colorscheme gruvbox-baby]])
 		end,
 	},
+	-- {
+	--  -- Had potential because the vibe is cool, but I think it's just too monochromatic for me. Not enough difference in the highlighting
+	-- 	"nyoom-engineering/oxocarbon.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.opt.background = "dark"
+	-- 		vim.cmd.colorscheme("oxocarbon")
+	-- 	end,
+	-- },
 	-- Good theme, but I don't like that the highlighting method picked up by vim-illuminate is underline instead of a highlight
 	-- {
 	-- 	"bluz71/vim-nightfly-guicolors",
