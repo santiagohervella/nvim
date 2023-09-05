@@ -54,6 +54,11 @@ return {
 					themes.get_dropdown({}),
 				},
 			},
+			pickers = {
+				oldfiles = {
+					only_cwd = true,
+				},
+			},
 		})
 
 		-- Enable telescope fzf native, if installed
@@ -78,18 +83,16 @@ return {
 			"<cmd>Telescope grep_string<cr>",
 			{ desc = "Find string under cursor in cwd", silent = true }
 		)
-		-- list open buffers in current neovim instance
 		keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Show open buffers", silent = true })
-		-- show harpoon marks
 		keymap("n", "<leader>fh", "<cmd>Telescope harpoon marks<cr>", { desc = "Show harpoon marks" })
+		keymap("n", "<leader>km", "<cmd>Telescope keymaps<cr>", { desc = "Show keymaps" })
+		keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Show recent files" })
 
 		-- TODO: Consider trying these out
 		-- list all git commits (use <cr> to checkout) ["gc" for git commits]
 		keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Show git commits" })
 		-- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 		keymap("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>", { desc = "Show git commits for current buffer" })
-		-- list git branches (use <cr> to checkout) ["gb" for git branch]
-		keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Show git branches" })
 		-- list current changes per file with diff preview ["gs" for git status]
 		keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Show current git changes per file" })
 	end,

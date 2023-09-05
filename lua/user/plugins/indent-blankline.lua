@@ -3,6 +3,9 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},
+	keys = {
+		{ "<leader>ib", "<cmd>IndentBlanklineToggle<CR>", desc = "Toggle indenting blank lines" },
+	},
 	config = function()
 		local indent_blankline = require("indent_blankline")
 
@@ -20,11 +23,5 @@ return {
 				"NvimTree",
 			},
 		})
-
-		-- Shorten function name
-		local keymap = vim.keymap.set
-
-		-- Toggle the plugin
-		keymap("n", "<leader>ib", "<cmd>IndentBlanklineToggle<CR>")
 	end,
 }
