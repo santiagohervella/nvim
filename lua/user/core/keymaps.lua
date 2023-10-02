@@ -85,4 +85,4 @@ keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
 keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
 
 -- Tmux sessionizer
-keymap("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<CR>")
+keymap("n", "<C-f>", ":silent !tmux neww ~/.config/tmux/tmux-sessionizer<CR>")

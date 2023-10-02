@@ -15,6 +15,9 @@ return {
 				theme = "nightfly",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
+
+				-- TODO: Decide whether or not you like this setting
+				globalstatus = true,
 			},
 			sections = {
 				lualine_a = { "mode" },
