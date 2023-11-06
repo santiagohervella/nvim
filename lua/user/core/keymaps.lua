@@ -35,7 +35,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>bd", ":bp|bd #<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>c", "<cmd>nohlsearch<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -46,7 +46,7 @@ keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
 -- Easy search and replace setup for the word the cursor is on
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 keymap("n", "Q", "<nop>") -- disables Q
 
@@ -78,11 +78,12 @@ keymap("c", "Q", "q")
 -- EXPERIMENTAL
 -- Trying these out...
 keymap("n", "<leader>+", "<C-a>", opts) -- increment shortcut
-keymap("n", "<leader>+", "<C-x>", opts) -- decrement shortcut
-keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
-keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
-keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
-keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
+keymap("n", "<leader>-", "<C-x>", opts) -- decrement shortcut
+-- Commenting these out as they will conflict with the new harpoon keymaps
+-- keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
+-- keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
+-- keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
+-- keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
 
 -- Tmux sessionizer
 keymap("n", "<C-f>", ":silent !tmux neww ~/.config/tmux/tmux-sessionizer<CR>")

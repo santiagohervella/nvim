@@ -84,7 +84,7 @@ return {
 			{ desc = "Find string under cursor in cwd", silent = true }
 		)
 		keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Show open buffers", silent = true })
-		keymap("n", "<leader>fh", "<cmd>Telescope harpoon marks<cr>", { desc = "Show harpoon marks" })
+		-- keymap("n", "<leader>fh", "<cmd>Telescope harpoon marks<cr>", { desc = "Show harpoon marks" })
 		keymap("n", "<leader>km", "<cmd>Telescope keymaps<cr>", { desc = "Show keymaps" })
 		keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Show recent files" })
 
