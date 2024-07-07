@@ -73,6 +73,13 @@ keymap("c", "W", "w")
 keymap("c", "Qa", "qa")
 keymap("c", "Q", "q")
 
+-- Tmux sessionizer
+keymap("n", "<C-f>", ":silent !tmux neww ~/.config/tmux/tmux-sessionizer<CR>")
+
+-- Merge conflict resolution
+keymap("n", "<leader>gdh", ":diffget //2<CR>")
+keymap("n", "<leader>gdl", ":diffget //3<CR>")
+
 -- Plugins keymaps --
 
 -- EXPERIMENTAL
@@ -84,6 +91,3 @@ keymap("n", "<leader>-", "<C-x>", opts) -- decrement shortcut
 -- keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 -- keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
 -- keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
-
--- Tmux sessionizer
-keymap("n", "<C-f>", ":silent !tmux neww ~/.config/tmux/tmux-sessionizer<CR>")
