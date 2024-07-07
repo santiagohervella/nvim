@@ -29,11 +29,16 @@ return {
 			-- opts.desc = "Show references"
 			-- keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) -- go to references
 
-			opts.desc = "Go to declaration"
-			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			-- Deciding not to use this one for now because `:h declaration` tell us: "Note: Many servers do not implement this method. Generally, see
+			-- |vim.lsp.buf.definition()| instead."
+			-- opts.desc = "Go to declaration"
+			-- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
 			opts.desc = "Show LSP definitions"
 			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+
+			opts.desc = "Go to definition in vertical split"
+			keymap.set("n", "gD", ":vsplit | lua vim.lsp.buf.definition()<CR>")
 
 			opts.desc = "Show LSP implementations"
 			keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations

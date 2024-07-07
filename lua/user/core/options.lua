@@ -4,6 +4,9 @@ local opt = vim.opt
 opt.number = true -- set numbered lines
 opt.relativenumber = true -- set relative numbers
 
+-- No vertical lines in splits
+vim.opt.fillchars = "vert:⠀"
+
 -- tabs & indentation
 opt.tabstop = 2 -- insert 2 spaces for a tab
 opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
@@ -17,7 +20,7 @@ opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below the 
 
 -- search settings
 opt.ignorecase = true -- ignore case in search patterns
-opt.smartcase = true -- smart case
+opt.smartcase = true -- smart case means that case matters if you use any capital letters as part of the search
 
 -- cursor line
 opt.cursorline = true -- highlight the current line
@@ -38,10 +41,10 @@ opt.clipboard = "unnamedplus"
 opt.splitbelow = true -- force all horizontal splits to go below current window
 opt.splitright = true -- force all vertical splits to go to the right of current window
 
--- highlight yanked text for 200ms using the "Visual" highlight group
+-- highlight yanked text for 150ms using the "Visual" highlight group
 vim.cmd([[
   augroup highlight_yank
   autocmd!
-  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})
+  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=150})
   augroup END
 ]])

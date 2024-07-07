@@ -22,9 +22,13 @@ return {
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				formatting.prettier, -- js/ts formatter
 				formatting.stylua, -- lua formatter
+				formatting.terraform_fmt.with({ -- terraform formatter should also format .hcl files
+					extra_filetypes = { "hcl" },
+				}),
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file({
+							".eslintrc",
 							".eslintrc.js",
 							".eslintrc.cjs",
 							".eslintrc.yaml",

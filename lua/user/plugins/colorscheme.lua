@@ -43,7 +43,7 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	--    -- Solid theme, nothing objectionable, but it just feels a bit too cold for me, personally
+	-- 	-- Solid theme, nothing objectionable, but it just feels a bit too cold for me, personally
 	-- 	"folke/tokyonight.nvim",
 	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
@@ -90,13 +90,28 @@ return {
 	-- 	-- https://github.com/rebelot/kanagawa.nvim
 	-- 	-- Too much yellow, I don't love this one...
 	-- 	-- On second thought, this one is not bad
-	--  -- Unfortunately, it suffers from the same vim-illuminate issue as nightfly
+	-- 	-- Unfortunately, it suffers from the same vim-illuminate issue as nightfly
 	-- 	"rebelot/kanagawa.nvim",
 	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- 	config = function()
 	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme kanagawa-dragon]])
+	-- 		-- vim.cmd([[colorscheme kanagawa-dragon]]) -- The darker version, but I find it a bit too dull and too low contrast
+	-- 		vim.cmd([[colorscheme kanagawa-wave]]) -- Bluer, definitely easier to read. This is where the too much yellow really comes into play
+	-- 	end,
+	-- },
+	-- {
+	-- -- This one prides itself on the transparency support, but I don't have that set up for iTerm, turns out I prefer a consistent background
+	-- 	"scottmckendry/cyberdream.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("cyberdream").setup({
+	-- 			-- Enable transparent background
+	-- 			transparent = true,
+	-- 		})
+	--
+	-- 		vim.cmd([[colorscheme cyberdream]])
 	-- 	end,
 	-- },
 	-- {
@@ -148,6 +163,17 @@ return {
 	-- 		})
 	--
 	-- 		vim.cmd.colorscheme("catppuccin")
+	-- 	end,
+	-- },
+	-- {
+	-- 	-- This is catppuccin without any mods
+	--  -- It's pretty good, but gives a bit too much VSCode vibes for me?
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("catppuccin-mocha")
 	-- 	end,
 	-- },
 }

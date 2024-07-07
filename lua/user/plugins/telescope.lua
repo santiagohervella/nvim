@@ -45,7 +45,7 @@ return {
 					i = {
 						["<Down>"] = actions.cycle_history_next,
 						["<Up>"] = actions.cycle_history_prev,
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 					},
 				},
 			},
