@@ -58,6 +58,9 @@ return {
 				oldfiles = {
 					only_cwd = true,
 				},
+				lsp_references = {
+					fname_width = 100,
+				},
 			},
 		})
 
