@@ -9,4 +9,11 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 	},
+	-- Putting this transparent plugin here because lazy doesn't like files that are 100% commented out
+	-- If you ever want to play around with transparency again, just enable this plugin
+	-- {
+	--   "tribela/transparent.nvim",
+	--   event = "VimEnter",
+	--   config = true,
+	-- }
 }

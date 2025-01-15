@@ -22,9 +22,34 @@ return {
 					},
 				},
 			},
+			-- Stolen from: https://github.com/Zeddnyx/Znvim/blob/master/lua/zedd/plugins/nvimtree/setup.lua#L24
+			-- Trying out a floating tree. If I don't like it, just go back to the commented out view below this
+			-- view = {
+			-- 	float = {
+			-- 		enable = true,
+			-- 		open_win_config = function()
+			-- 			local screen_w = vim.opt.columns:get()
+			-- 			local w_h = 70
+			-- 			local s_h = 42
+			-- 			local center_x = (screen_w - w_h) / 2
+			-- 			local center_y = ((vim.opt.lines:get() - s_h) / 5) - vim.opt.cmdheight:get()
+			-- 			return {
+			-- 				border = "rounded",
+			-- 				relative = "editor",
+			-- 				row = center_y,
+			-- 				col = center_x,
+			-- 				width = w_h,
+			-- 				height = s_h,
+			-- 			}
+			-- 		end,
+			-- 	},
+			-- 	width = 50,
+			-- },
+
 			view = {
 				width = 50,
 			},
+
 			filters = {
 				dotfiles = false,
 				git_ignored = false,

@@ -60,8 +60,9 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move visual line selected lines up and down
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '>-2<CR>gv=gv")
+-- These are now handlded by the moveline plugin. Jump to ../plugins/mini-move.lua
+-- keymap("v", "J", ":m '>+1<CR>gv=gv")
+-- keymap("v", "K", ":m '>-2<CR>gv=gv")
 
 -- Insert --
 keymap("i", "<C-c>", "<ESC>")
@@ -91,3 +92,13 @@ keymap("n", "<leader>-", "<C-x>", opts) -- decrement shortcut
 -- keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 -- keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
 -- keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
+
+-- Here is another way of doing transparency if you don't want to use the transparency plugin
+-- This doesn't work for all backgrounds and there's no way to toggle back without restarting nvim, but it's something
+-- Stolen from here: https://github.com/Aylur/dotfiles/blob/4b66557333bd7199fa858e3275405d831287be37/nvim/lua/config/keymaps.lua#L49C1-L55C5
+-- keymap("n", "<leader>o", function()
+-- 	vim.cmd("highlight Normal guibg=NONE")
+-- 	vim.cmd("highlight NonText guibg=NONE")
+-- 	vim.cmd("highlight NonText ctermbg=NONE")
+-- 	vim.cmd("highlight NonText ctermbg=NONE")
+-- end)
