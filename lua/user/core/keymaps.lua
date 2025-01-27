@@ -81,6 +81,17 @@ keymap("n", "<C-f>", ":silent !tmux neww ~/.config/tmux/tmux-sessionizer<CR>")
 keymap("n", "<leader>gdh", ":diffget //2<CR>")
 keymap("n", "<leader>gdl", ":diffget //3<CR>")
 
+-- Yank current buffer path to clipboard in a TypeScript project
+local function yank_modified_path()
+	local path = vim.fn.expand("%")
+	local modified_path = path:gsub(".*(/src.*)", ".%1")
+	vim.fn.setreg("+", modified_path)
+end
+
+_G.yank_modified_path = yank_modified_path
+
+keymap("n", "<leader>yb", ":lua yank_modified_path()<CR>")
+
 -- Plugins keymaps --
 
 -- EXPERIMENTAL

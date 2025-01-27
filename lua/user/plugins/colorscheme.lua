@@ -166,8 +166,11 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	-- This is catppuccin without any mods
-	--  -- It's pretty good, but gives a bit too much VSCode vibes for me?
+	-- This is catppuccin without any mods
+	-- It's pretty good, but gives a bit too much VSCode vibes for me?
+	-- Update 9/23/24: I tried using this theme for a few days. I got used to it and eventually began to enjoy it
+	-- But then I went briefly back to gruvbox and when I flipped back to this one afterwards it felt way too intense
+	-- I think this is a totally usable theme, but I vastly prefer the less in your face colors of gruvbox
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",
 	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -175,5 +178,13 @@ return {
 	-- 	config = function()
 	-- 		vim.cmd.colorscheme("catppuccin-mocha")
 	-- 	end,
+	-- },
+	-- {
+	-- 	-- I don't love the blue or the green in this theme
+	-- 	-- There is also too much white, which sometimes makes it harder to spot my cursor
+	-- 	-- Sadly, I also hate the line hilight color. I think the normal / insert mode color is the same as the visual modes color, which is quite the oversight!
+	-- 	"scottmckendry/cyberdream.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
 	-- },
 }
