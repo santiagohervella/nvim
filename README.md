@@ -1,3 +1,13 @@
+If you ever want to blow away all the plugins + `./lazy-lock.json` to reinstall the latest of everything:
+
+```sh
+rm -rf ~/.local/share/nvim
+```
+
+Then eveything should re-install once you open `nvim` the next time.
+
+# Old README
+
 If you ever run into any issues such as "nvim-tree.renderer.help not found", try this:
 
 Enter this in command mode to show you the path to

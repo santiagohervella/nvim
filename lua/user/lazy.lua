@@ -17,4 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "user.plugins" },
 	{ import = "user.plugins.lsp" },
+}, {
+	change_detection = {
+		-- automatically check for config file changes and reload the ui
+		enabled = true,
+		notify = true, -- get a notification when changes are found
+	},
 })

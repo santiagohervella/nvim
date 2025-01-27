@@ -127,7 +127,7 @@ return {
 			defaults = {
 				prompt_prefix = " ",
 				selection_caret = " ",
-				path_display = { "truncate" }, -- in the old lunarvim config, this was set to "smart"
+				path_display = { "truncate" },
 				sorting_strategy = "ascending",
 				file_ignore_patterns = { ".git/", "node_modules", ".stubs/" },
 				-- make the layout like jetbrains global search
@@ -196,5 +196,7 @@ return {
 		keymap("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>", { desc = "Show git commits for current buffer" })
 		-- list current changes per file with diff preview ["gs" for git status]
 		keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Show current git changes per file" })
+		keymap("n", "<leader>fn", "<cmd>TodoTelescope<cr>", { desc = "Find Notes: Show all TODOs in cwd" })
+		keymap("n", "<leader>rr", "<cmd>Telescope registers<CR>", { desc = "Show registers" })
 	end,
 }
