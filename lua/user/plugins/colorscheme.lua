@@ -52,6 +52,17 @@ return {
 	-- 		vim.cmd([[colorscheme tokyonight]])
 	-- 	end,
 	-- },
+	{
+		"sainnhe/everforest",
+		-- lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		lazy = true,
+		-- priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			-- load the colorscheme here
+			vim.g.everforest_background = "hard"
+			-- vim.cmd([[colorscheme everforest]])
+		end,
+	},
 	-- {
 	-- Again, not too shabby, but the green is too much and too much contrast
 	-- "EdenEast/nightfox.nvim",
@@ -165,15 +176,26 @@ return {
 	-- 		vim.cmd.colorscheme("catppuccin")
 	-- 	end,
 	-- },
+	{
+		-- This is catppuccin without any mods
+		-- It's pretty good, but gives a bit too much VSCode vibes for me?
+		-- Update 9/23/24: I tried using this theme for a few days. I got used to it and eventually began to enjoy it
+		-- But then I went briefly back to gruvbox and when I flipped back to this one afterwards it felt way too intense
+		-- I think this is a totally usable theme, but I vastly prefer the less in your face colors of gruvbox
+		-- "catppuccin/nvim",
+		-- name = "catppuccin",
+		-- lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		-- priority = 1000,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("catppuccin-mocha")
+		-- end,
+	},
 	-- {
-	-- 	-- This is catppuccin without any mods
-	--  -- It's pretty good, but gives a bit too much VSCode vibes for me?
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	-- I don't love the blue or the green in this theme
+	-- 	-- There is also too much white, which sometimes makes it harder to spot my cursor
+	-- 	-- Sadly, I also hate the line hilight color. I think the normal / insert mode color is the same as the visual modes color, which is quite the oversight!
+	-- 	"scottmckendry/cyberdream.nvim",
+	-- 	lazy = false,
 	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("catppuccin-mocha")
-	-- 	end,
 	-- },
 }

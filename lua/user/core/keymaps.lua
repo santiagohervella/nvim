@@ -86,8 +86,21 @@ keymap("n", "<leader>gdl", ":diffget //3<CR>")
 -- Trying these out...
 keymap("n", "<leader>+", "<C-a>", opts) -- increment shortcut
 keymap("n", "<leader>-", "<C-x>", opts) -- decrement shortcut
+
+local function yank_modified_path()
+	local path = vim.fn.expand("%")
+	local modified_path = path:gsub(".*(/src.*)", ".%1")
+	vim.fn.setreg("+", modified_path)
+end
+
+_G.yank_modified_path = yank_modified_path
+
+keymap("n", "<leader>yb", ":lua yank_modified_path()<CR>")
 -- Commenting these out as they will conflict with the new harpoon keymaps
 -- keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
 -- keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 -- keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
 -- keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
+--
+--
+--
