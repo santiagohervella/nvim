@@ -17,7 +17,7 @@ return {
 		},
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
-		"ThePrimeagen/harpoon",
+		-- "ThePrimeagen/harpoon",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -165,7 +165,7 @@ return {
 		-- Enable telescope fzf native, if installed
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
-		telescope.load_extension("harpoon")
+		-- telescope.load_extension("harpoon")
 
 		-- set line numbers in the telescope window
 		vim.cmd("autocmd User TelescopePreviewerLoaded setlocal number")

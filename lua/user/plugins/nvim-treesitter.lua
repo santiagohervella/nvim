@@ -46,10 +46,16 @@ return {
 				incremental_selection = {
 					enable = true,
 					keymaps = {
-						init_selection = "<leader>is",
-						node_incremental = "<leader>is",
-						scope_incremental = false,
-						node_decremental = "<bs>",
+						-- init_selection = "<leader>is",
+						-- node_incremental = "<leader>is",
+						-- scope_incremental = false,
+						-- node_decremental = "<bs>",
+
+						-- Trying out these keymaps to have this be easier to use
+						init_selection = "<CR>",
+						scope_incremental = "<CR>",
+						node_incremental = "<TAB>",
+						node_decremental = "<S-TAB>",
 					},
 				},
 			})
