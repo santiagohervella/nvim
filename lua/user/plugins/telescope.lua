@@ -184,12 +184,21 @@ return {
 			"<cmd>Telescope grep_string<cr>",
 			{ desc = "Find string under cursor in cwd", silent = true }
 		)
-		keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Show open buffers", silent = true })
-		-- keymap("n", "<leader>fh", "<cmd>Telescope harpoon marks<cr>", { desc = "Show harpoon marks" })
+		-- Trying out snip.nvim instead of Telescope for finding open buffers
+		-- Check out ./snipe.lua
+		-- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Show open buffers", silent = true })
+
+		-- keymap("n", "<leader>fm", "<cmd>Telescope harpoon marks<cr>", { desc = "Show harpoon marks" })
 		keymap("n", "<leader>km", "<cmd>Telescope keymaps<cr>", { desc = "Show keymaps" })
 		keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Show recent files" })
 
 		-- TODO: Consider trying these out
+		keymap(
+			"n",
+			"<leader>fs",
+			"<cmd>Telescope lsp_document_symbols<cr>",
+			{ desc = "Show LSP symbols for current buffer" }
+		)
 		-- list all git commits (use <cr> to checkout) ["gc" for git commits]
 		keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Show git commits" })
 		-- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
