@@ -31,7 +31,7 @@ return {
 				"tailwindcss",
 				"terraformls",
 				-- "tsserver", -- this is deprecated, use ts_ls instead
-				"ts_ls",
+				-- "ts_ls", -- Trying out ./typescript-tools.lua tools instead of this
 				"yamlls",
 				"astro",
 			},

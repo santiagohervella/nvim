@@ -19,7 +19,7 @@ return {
 	keys = {
 		{
 			"<leader>fs",
-			"<cmd>Trouble symbols toggle focus=true<cr>",
+			"<cmd>Trouble symbols toggle focus=true<CR>",
 			desc = "Find Symbols for current buffer (Trouble)",
 		},
 	},

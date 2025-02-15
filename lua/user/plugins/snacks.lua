@@ -3,6 +3,18 @@ return {
 	---@type snacks.Config
 	opts = {
 		gitbrowse = { enabled = true },
+		indent = {
+			enabled = true,
+			animate = {
+				enabled = false,
+			},
+			chunk = {
+				enabled = true,
+			},
+		},
+		bigfile = {
+			enabled = true,
+		},
 	},
 	keys = {
 		{
@@ -10,7 +22,18 @@ return {
 			"<cmd>lua require('snacks').gitbrowse()<CR>",
 			desc = "Open current file in the browser",
 		},
-		-- Using telescope-helpgrep instead. Check out ./telescope-helpgrep.lua
+		{
+			"<leader>ib",
+			function()
+				local snacks = require("snacks")
+				if snacks.indent.enabled then
+					snacks.indent.disable()
+				else
+					snacks.indent.enable()
+				end
+			end,
+			desc = "Toggle indenting blank lines",
+		},
 		{
 			"<leader>fh",
 			function()
