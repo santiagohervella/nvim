@@ -43,6 +43,10 @@ This purpose of this section is so I don't continue to see these plugins as shin
   - It's weird that this one is different enough from folke's standalone zen plugin that I actually use
   - I tried moving to this one and found that the set of options available were not enough to make it look like the old one
   - Beyond that there were no new features available in this one that made it worth switching
+- [folke/twilight.nvim](https://github.com/folke/twilight.nvim)
+  - I knew that I probably wouldn't like this plugin for coding, but I wanted to try it out for use with markdown. I tried it briefly and didn't really love it. It felt like the section I want visible is totally different depending on the page, paragraph, line, or word that I'm editing.
+  - It also, sadly, doesn't play super well with the markdown.nvim plugin and that plugin is way way more valuable
+  - Perhaps I'll revisit this plugin in the future. I like that zen-mode has an option to enable twilight when you start zen-mode. Ideally it should only turn on twilight for markdown files in zen-mode, but I didn't think it productive to spend time on that since I could already tell I didn't like it
 
 # Old README
 

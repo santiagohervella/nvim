@@ -98,6 +98,14 @@ keymap("n", "<leader>yb", ":lua yank_modified_path()<CR>")
 -- Trying these out...
 keymap("n", "<leader>+", "<C-a>", opts) -- increment shortcut
 keymap("n", "<leader>-", "<C-x>", opts) -- decrement shortcut
+keymap("n", "<leader>D", function()
+	if vim.wo.diff then
+		vim.cmd("windo diffoff")
+	else
+		vim.cmd("windo diffthis")
+		vim.cmd("windo set wrap")
+	end
+end)
 
 -- Here is another way of doing transparency if you don't want to use the transparency plugin
 -- This doesn't work for all backgrounds and there's no way to toggle back without restarting nvim, but it's something
