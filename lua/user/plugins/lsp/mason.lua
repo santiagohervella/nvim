@@ -5,6 +5,15 @@ return {
 		"williamboman/mason-lspconfig.nvim", -- bridges gap between mason & lspconfig
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
+	cmd = {
+		"Mason",
+		"MasonInstall",
+		"MasonUninstall",
+		"MasonUninstallAll",
+		"MasonLog",
+		"MasonUpdate",
+	},
+	event = "VeryLazy", -- This ensures Mason runs its setup during startup, but after other urgent plugins
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")

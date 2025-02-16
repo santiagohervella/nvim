@@ -7,7 +7,7 @@ return {
 		dependencies = {
 			"kevinhwang91/promise-async",
 		},
-		event = "VimEnter",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("ufo").setup({
 				-- treesitter not required

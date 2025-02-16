@@ -18,6 +18,71 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
+	keys = {
+		{
+			"<leader>ff",
+			"<cmd>Telescope find_files<CR>",
+			desc = "Fuzzy find files in cwd, respects .gitignore",
+		},
+		{
+			"<leader>ft",
+			"<cmd>Telescope live_grep<CR>",
+			desc = "Find string in cwd",
+		},
+		{
+			"<leader>fc",
+			"<cmd>Telescope grep_string<CR>",
+			desc = "Find string under cursor in cwd",
+		},
+		{
+			"<leader>km",
+			"<cmd>Telescope keymaps<CR>",
+			desc = "Show keymaps",
+		},
+		{
+			"<leader>fr",
+			"<cmd>Telescope oldfiles<CR>",
+			desc = "Show recent files",
+		},
+		-- Trying out snip.nvim instead of Telescope for finding open buffers
+		-- Check out ./snipe.lua
+		-- {
+		-- 	"<leader>fb",
+		-- 	"<cmd>Telescope buffers<CR>",
+		-- 	desc = "Show open buffers",
+		-- },
+		-- Experimental keymaps (TODO: Try these out!)
+		{
+			"<leader>fs",
+			":lua document_symbols_for_current_buffer()<CR>",
+			desc = "Show LSP symbols for current buffer",
+		},
+		{
+			"<leader>gc",
+			"<cmd>Telescope git_commits<CR>",
+			desc = "List all git commits (use <CR> to checkout)",
+		},
+		{
+			"<leader>gfc",
+			"<cmd>Telescope git_bcommits<CR>",
+			desc = "List git commits for current buffer (use <CR> to checkout)",
+		},
+		{
+			"<leader>gs",
+			"<cmd>Telescope git_status<CR>",
+			desc = "List current git changes per file with diff preview",
+		},
+		{
+			"<leader>fn",
+			"<cmd>TodoTelescope<CR>",
+			desc = "Find Notes: Show all TODOs in cwd",
+		},
+		{
+			"<leader>rr",
+			"<cmd>Telescope registers<CR>",
+			desc = "Show registers",
+		},
+	},
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
@@ -142,6 +207,8 @@ return {
 			end)
 		end
 
+		_G.document_symbols_for_current_buffer = document_symbols_for_current_buffer
+
 		-- ------------------------------------------------------------------------------------------------
 		-- ------------------------------------------------------------------------------------------------
 		-- ------------------------------------------------------------------------------------------------
@@ -211,57 +278,5 @@ return {
 
 		-- set line numbers in the telescope window
 		vim.cmd("autocmd User TelescopePreviewerLoaded setlocal number")
-
-		-- Shorten function name
-		local keymap = vim.keymap.set
-
-		keymap(
-			"n",
-			"<leader>ff",
-			"<cmd>Telescope find_files<CR>",
-			{ desc = "Fuzzy find files in cwd, respects .gitignore", silent = true }
-		)
-		keymap("n", "<leader>ft", "<cmd>Telescope live_grep<CR>", { desc = "Find string in cwd", silent = true })
-		keymap(
-			"n",
-			"<leader>fc",
-			"<cmd>Telescope grep_string<CR>",
-			{ desc = "Find string under cursor in cwd", silent = true }
-		)
-		-- Trying out snip.nvim instead of Telescope for finding open buffers
-		-- Check out ./snipe.lua
-		-- keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Show open buffers", silent = true })
-
-		keymap("n", "<leader>km", "<cmd>Telescope keymaps<CR>", { desc = "Show keymaps" })
-		keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Show recent files" })
-
-		-- TODO: Try these out!
-		_G.document_symbols_for_current_buffer = document_symbols_for_current_buffer
-		keymap(
-			"n",
-			"<leader>fs",
-			":lua document_symbols_for_current_buffer()<CR>",
-			{ desc = "Show LSP symbols for current buffer" }
-		)
-		keymap(
-			"n",
-			"<leader>gc",
-			"<cmd>Telescope git_commits<CR>",
-			{ desc = "List all git commits (use <CR> to checkout)" }
-		)
-		keymap(
-			"n",
-			"<leader>gfc",
-			"<cmd>Telescope git_bcommits<CR>",
-			{ desc = "List git commits for current buffer (use <CR> to checkout)" }
-		)
-		keymap(
-			"n",
-			"<leader>gs",
-			"<cmd>Telescope git_status<CR>",
-			{ desc = "List current git changes per file with diff preview" }
-		)
-		keymap("n", "<leader>fn", "<cmd>TodoTelescope<CR>", { desc = "Find Notes: Show all TODOs in cwd" })
-		keymap("n", "<leader>rr", "<cmd>Telescope registers<CR>", { desc = "Show registers" })
 	end,
 }
