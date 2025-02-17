@@ -17,5 +17,7 @@ return {
 	},
 	config = function()
 		vim.cmd("let test#strategy = 'vimux'")
+		vim.cmd("let g:test#javascript#runner = 'vitest'")
+		vim.cmd("let test#javascript#vitest#executable = 'npm run test'")
 	end,
 }
